@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Diffie-HellmanKey-Exchange</title>
+</head>
+<body>
+<h2>Diffie-HellmanKey-Exchange</h2>
+<hr>
+<script>
+
+function power(p,a,q)
+{
+	if(b==1)
+	return a;
+	else
+	return ((Math.pow(p,a))%q);
+}
+
+var P,G,x,a,y,b,ka,kb;
+
+p=6;
+document.write("The value of p : " +p+"<br>");
+
+q=13;
+document.write("The value of q : " +q+"<br>");
+
+a=3;
+document.write("The private key a for Alice : " +a+"<br>");
+x = power(p,a,q);
+b=10;
+document.write("The private key a for Bob : " +b+"<br>");
+y = power(p,b,q);
+
+ka= power(y,a,q); // Secret key for Alice
+kb= power(x,b,q); // Secret key for Bob
+
+document.write("Secret keet for the Alice is : " +ka+"<br>");//Secret Key must be Same
+document.write("Secret keet for the Bob is : " +kb+"<br>");
+
+</script>
+</body>
+</html>
